@@ -16,23 +16,23 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="bg-white">
+      <div className="bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy-900 font-serif-display text-lg font-bold text-gold-500">J</div>
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 font-serif-display text-xl font-bold text-gold-500 shadow-sm">J</div>
             <div className="leading-tight">
               <p className="font-serif-display text-base font-bold text-navy-900 sm:text-lg">JOSBEN International</p>
-              <p className="text-[11px] font-semibold uppercase tracking-widest text-gold-600">Business School · Uyo</p>
+              <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-gold-600">Business School · Uyo</p>
             </div>
           </Link>
-          <nav className="hidden items-center gap-5 text-sm font-medium text-slate-700 lg:flex">
+          <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-700 lg:flex" aria-label="Primary">
             {NAV.map((n) => (
-              <Link key={n.label} href={n.href} className="hover:text-navy-800">{n.label}</Link>
+              <Link key={n.label} href={n.href} className="transition-colors hover:text-navy-800">{n.label}</Link>
             ))}
-            <Link href="/admissions" className="rounded-full bg-navy-900 px-4 py-2 text-white hover:bg-navy-800">Apply Now</Link>
+            <Link href="/admissions" className="card-lift rounded-full bg-gold-500 px-5 py-2.5 text-navy-950 shadow-sm hover:bg-gold-600">Apply Now</Link>
           </nav>
-          <button onClick={() => setOpen(!open)} className="rounded-lg border px-3 py-2 text-sm lg:hidden" aria-label="Menu">
-            {open ? "Close" : "Menu"}
+          <button onClick={() => setOpen(!open)} className="min-h-[44px] min-w-[44px] rounded-xl border border-slate-300 px-3 py-2 text-sm font-semibold lg:hidden" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open}>
+            {open ? "✕" : "☰ Menu"}
           </button>
         </div>
         {open && (
