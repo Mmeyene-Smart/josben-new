@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 
@@ -6,7 +7,10 @@ export default function Footer() {
     <footer className="bg-navy-950 text-slate-300">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <p className="font-serif-display text-lg font-bold text-white">JOSBEN International Business School</p>
+          <div className="flex items-center gap-3">
+            <Image src="/logo.jpg" alt="JOSBEN logo" width={40} height={40} className="h-10 w-10 rounded-lg object-cover" loading="lazy" />
+            <p className="font-serif-display text-lg font-bold leading-tight text-white">JOSBEN International Business School</p>
+          </div>
           <p className="mt-2 text-sm">Home of excellence in professional and academic tutoring in Uyo, Akwa Ibom — with UK pathways.</p>
           <p className="mt-3 text-xs uppercase tracking-widest text-gold-500">Diversity · Innovation · Excellence · Trust</p>
         </div>

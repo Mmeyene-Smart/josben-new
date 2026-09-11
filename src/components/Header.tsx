@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { NAV, SITE } from "@/lib/site";
@@ -19,7 +20,7 @@ export default function Header() {
       <div className="bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 font-serif-display text-xl font-bold text-gold-500 shadow-sm">J</div>
+            <Image src="/logo.jpg" alt="JOSBEN International Business School logo" width={44} height={44} className="h-11 w-11 rounded-xl object-cover shadow-sm" priority />
             <div className="leading-tight">
               <p className="font-serif-display text-base font-bold text-navy-900 sm:text-lg">JOSBEN International</p>
               <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-gold-600">Business School · Uyo</p>
